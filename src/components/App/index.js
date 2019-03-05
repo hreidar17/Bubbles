@@ -1,16 +1,13 @@
 //import React, { Component } from 'react';
 import React from 'react';
-import NavigationBar from '../NavigationBar'
+import NavigationBar from '../NavigationBar';
+import ListView from '../ListView';
+import BubbleService from '../../services/BubbleService';
+
 
 class App extends React.Component {
-  componentDidMount(){
-    fetch('http://localhost:3500/api/bubbles').then(resp => {
-      if(resp.ok){
-        return resp.json();
-      }
-    }).then(data => {
-      console.log(data);
-    });
+  componentDidMount() {
+    BubbleService.getAllBubbleProducts().then(data => this.setState({ bubbleProducts: data }));
   }
 
   constructor(props) {
@@ -21,11 +18,15 @@ class App extends React.Component {
   }
 
   render() {
+    //console.log(this.state.bubbleProducts);
     return (
       <>
         <NavigationBar />
         <div className="container">
+          <br />
           <h2>Bubble products</h2>
+          <br />
+          <ListView list={ this.state.bubbleProducts } />
         </div>
       </>
     )

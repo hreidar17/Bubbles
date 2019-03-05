@@ -3,8 +3,8 @@ import React from 'react';
 const NavLinks = () => {
     return (
         <ul className="navigation-links">
-            <li>Top 10 Games</li>
-            <li>News</li>
+            <li>Products</li>
+            <li>Bundles</li>
             <li>About</li>
             <li>Cart</li>
         </ul>
