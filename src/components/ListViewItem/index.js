@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const ListViewItem = props => {
@@ -6,12 +7,17 @@ const ListViewItem = props => {
   const { id, name, description, image, price } = props;
   return (
     <div className="card text-white bg-secondary mb-3">
-      <div className="card-header">{ name } <i className="fa fa-2x fa-times" style={{ float: 'right' }}></i></div>
+      <div className="card-title"> <Link to={ "/products/" + id }>{ name }</Link></div>
       <div className="card-body">
         <div className="card-text">
-          <div style={{float: 'left', padding: '0px 20px 0px 5px'}}><img height='100' src={ image } alt=""></img></div>
+          <div style={{float: 'left', padding: '0px 20px 0px 5px'}}><Link to={ "/products/" + id }><img height='100' src={ image } alt="" /></Link></div>
           <div><strong>Description: </strong> <span> { description }</span></div>
           <div><strong>Price: </strong> <span> { price } ISK</span></div>
+          <div>
+            <form>
+              <input type="button" value="Add to cart" />
+            </form>
+          </div>
         </div>
       </div>
     </div>
