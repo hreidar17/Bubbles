@@ -6,8 +6,8 @@ import Products from './Products';
 import BubbleDetail from './BubbleDetail';
 import Bundles from './Bundles';
 import About from './About';
-import { BubbleProductProvider } from '../context/BubbleContext';
-import { ThemeProvider } from '../context/ThemeContext';
+//import { BubbleProductProvider } from '../context/BubbleContext';
+//import { ThemeProvider } from '../context/ThemeContext';
 
 
 class App extends React.Component {
