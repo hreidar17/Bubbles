@@ -6,7 +6,7 @@ const getAllBubbleProducts = () => {
     if(!data) { return []; } //Ef ekkert finnst
 
     const bubbleProducts = data;
-
+    //console.log(bubbleProducts[1]);
     return bubbleProducts;
   });
 };

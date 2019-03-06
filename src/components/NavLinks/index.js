@@ -1,18 +1,38 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const NavLinks = () => {
     return (
-        <ul className="navigation-links">
-            <li>Products</li>
-            <li>Bundles</li>
-            <li>About</li>
-            <li>Cart</li>
+        <ul className="navbar-nav mr-auto">
+        <li className="nav-item">
+          <NavLink exact to="/" className="nav-link">Products</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink exact to="/bundles" className="nav-link">Bundles</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink exact to="/about" className="nav-link">About</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink exact to="/cart" className="nav-link">Cart</NavLink>
+        </li>
         </ul>
-        //<li><a href="#">Top 10 Games</a></li>
-        //<li><a href="#">News</a></li>
-        //<li><a href="#">About</a></li>
-        //<li><a href="#">Cart</a></li>
     );
 };
 
 export default NavLinks;
+
+ /*
+    <li className="nav-item">
+      <NavLink exact to="/" className="nav-link">Products</NavLink>
+    </li>
+    <li className="nav-item">
+      <NavLink exact to="/bundles" className="nav-link">Bundles</NavLink>
+    </li>
+    <li className="nav-item">
+      <NavLink exact to="/about" className="nav-link">About</NavLink>
+    </li>
+    <li className="nav-item">
+      <NavLink exact to="/cart" className="nav-link">Cart</NavLink>
+    </li>
+    //*/

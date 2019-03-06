@@ -1,11 +1,8 @@
-//import React, { Component } from 'react';
 import React from 'react';
-import NavigationBar from '../NavigationBar';
 import ListView from '../ListView';
 import BubbleService from '../../services/BubbleService';
 
-
-class App extends React.Component {
+class Products extends React.Component {
   componentDidMount() {
     BubbleService.getAllBubbleProducts().then(data => this.setState({ bubbleProducts: data }));
   }
@@ -21,8 +18,7 @@ class App extends React.Component {
     //console.log(this.state.bubbleProducts);
     return (
       <>
-        <NavigationBar />
-        <div className="container">
+        <div>
           <br />
           <h2>Bubble products</h2>
           <br />
@@ -33,4 +29,4 @@ class App extends React.Component {
   }
 };
 
-export default App;
+export default Products;
