@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { findBubbleProduct } from '../../services/BubbleService';
 
 const ListViewItem = props => {
   //eslint-disable-next-line
@@ -15,7 +16,11 @@ const ListViewItem = props => {
           <div><strong>Price: </strong> <span> { price } ISK</span></div>
           <div>
             <form>
-              <input type="button" value="Add to cart" />
+              <input type="button" onClick = {
+                function goToCart() {
+                  toCart(id);
+                }
+              } value="Add to cart" />
             </form>
           </div>
         </div>
@@ -32,4 +37,19 @@ ListViewItem.propTypes = {
   price: PropTypes.number.isRequired
 };
 
+function toCart(id){
+  if(localStorage.getItem('cart') === null) {
+    var item = [];
+    item.push(id);
+    localStorage.setItem('cart', item);
+  } else {
+    var item = [];
+    item.push(localStorage.getItem('cart'));
+    item.push(id);
+    localStorage.setItem('cart', item);
+  }
+}
+
+
 export default ListViewItem;
+
