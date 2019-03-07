@@ -4,13 +4,24 @@ const getAllBubbleProducts = () => {
     if (resp.ok) { return resp.json(); }
   }).then(data => {
     if(!data) { return []; } //Ef ekkert finnst
-
-    const bubbleProducts = data;
-    //console.log(bubbleProducts[1]);
-    return bubbleProducts;
+    return data;
   });
 };
 
+const findBubbleProduct = (id) => {
+  return fetch('http://localhost:3500/api/bubbles/'+id).then(resp => {
+    if (resp.ok) { return resp.json(); }
+  }).then(data => {
+    if(!data) { return null; } //Ef ekkert finnst
+    console.log(data);
+    return data;
+  });
+}
+
 export default {
   getAllBubbleProducts
+};
+
+export {
+  findBubbleProduct
 };

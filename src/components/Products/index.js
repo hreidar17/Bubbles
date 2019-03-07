@@ -19,8 +19,7 @@ class Products extends React.Component {
     return (
       <>
         <div>
-          <br />
-          <h2>Bubble products</h2>
+          <h2 style={{textAlign: 'center'}}>Bubble products</h2>
           <br />
           <ListView list={ this.state.bubbleProducts } />
         </div>
