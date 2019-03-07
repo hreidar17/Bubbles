@@ -4,7 +4,8 @@ import { getAllBundles } from '../../services/BubbleService'
 
 class BundleList extends React.Component {
     componentDidMount() {
-        getAllBundles().then(data => this.setState({bundlesList: data}));
+        getAllBundles().then(
+          data => this.setState({bundlesList: data}));
     }
 
     constructor(props) {
@@ -21,7 +22,7 @@ class BundleList extends React.Component {
                 <br />
                     <h2>Bundle products</h2>
                 <br />
-                <Bundles list={ this.state.bundlesList } />
+                    <Bundles list={ this.state.bundlesList } />
               </div>
             </div>
         )

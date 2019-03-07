@@ -3,7 +3,7 @@ import { findBubbleProduct } from '../../services/BubbleService';
 
 class BubbleDetail extends React.Component {
     componentDidMount() {
-        var bubbleItem = findBubbleProduct(this.props.match.params.bubbleId).then(item => {
+        findBubbleProduct(this.props.match.params.bubbleId).then(item => {
           this.setState({ bubbleItem: item });
         });
     }
@@ -19,7 +19,7 @@ class BubbleDetail extends React.Component {
       if(this.state.bubbleItem == null){
         return(
           <div style={{textAlign: 'center'}}>
-            <h1>NOT FOUND!</h1>
+            <h1>Bubble Item not found</h1>
           </div>
         );
       }

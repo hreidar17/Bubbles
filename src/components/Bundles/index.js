@@ -1,7 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import BundleItem from '../BundleItem';
-
 
 const Bundles = props => {
   const {list} = props;
@@ -10,7 +9,7 @@ const Bundles = props => {
 };
 
 Bundles.propTypes = {
-  list: PropTypes.array.isRequired
+  list: propTypes.array.isRequired
 };
 
 export default Bundles

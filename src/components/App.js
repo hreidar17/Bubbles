@@ -8,8 +8,9 @@ import BundleList from './BundlesList';
 import About from './About';
 import Cart from './Cart';
 import Footer from './Footer';
-import { BubbleProductProvider } from '../context/BubbleContext';
-import { ThemeProvider } from '../context/ThemeContext';
+import NoMatch from './NoMatch';
+//import { BubbleProductProvider } from '../context/BubbleContext';
+//import { ThemeProvider } from '../context/ThemeContext';
 
 
 class App extends React.Component {
@@ -27,6 +28,7 @@ class App extends React.Component {
             <Route exact path="/about" component={ About } />
             <Route exact path="/cart" component={ Cart } />
             <Route exact path="/products/:bubbleId" component={ BubbleDetail } />
+            <Route component={NoMatch} />
           </Switch>
         </div>
         <Footer />

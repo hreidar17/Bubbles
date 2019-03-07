@@ -13,7 +13,7 @@ const findBubbleProduct = (id) => {
     if (resp.ok) { return resp.json(); }
   }).then(data => {
     if(!data) { return null; } //Ef ekkert finnst
-    console.log(data);
+    //console.log(data);
     return data;
   });
 }
@@ -24,9 +24,8 @@ const getAllBundles = () => {
     }).then(data => {
 
         if(!data) {return []; }
-        console.log("bundle-item: " + data)
-        const bundles = data;
-        return bundles;
+        //console.log("bundle-item: " + data)
+        return data;
     });
 };
 
