@@ -50,6 +50,5 @@ function toCart(id){
   }
 }
 
-
 export default ListViewItem;
 
