@@ -3,7 +3,6 @@ import React from 'react'
 class NoMatch extends React.Component {
 
   render() {
-    //console.log(this.state.bubbleProducts);
     return (
       <>
         <div className="container" style={{marginTop: '50px'}}>

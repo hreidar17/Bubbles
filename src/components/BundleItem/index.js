@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-//import ListView from '../ListView';
-//import ListViewItem from '../ListViewItem';
 import { findBubbleProduct } from '../../services/BubbleService'
 
 function getProducts(arr) {
@@ -18,15 +16,20 @@ function getProducts(arr) {
 };
 
 const BundleItem = props => {
-    const { id, name, items} = props;
-    //var ProductList = getProducts(items);
+    const { name, items} = props;
 
     return (
         <div className="card text-white bg-secondary mb-3">
             <div className="card-header">{ name } <i className="fa fa-2x fa-times" style={{ float: 'right' }}></i></div>
             <div className="card-body">
                 <div className="card-text">
+                {/*
+                  trying to use 'ProductList' array to store the items of a bundle
+                  var ProductList = getProducts(items);
 
+                  We could not resolve a issue when we tried to map the items, 
+                  so instead here's a dumb looking link
+                */}
                 {items.map(pl => <Link to={ "/products/" + pl }>Item{<br />}</Link>)}
                 </div>
             </div>
@@ -34,10 +37,11 @@ const BundleItem = props => {
     );
 };
 
-
 BundleItem.propTypes = {
     id: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]).isRequired,
     name: PropTypes.string.isRequired
 };
+
+
 
 export default BundleItem

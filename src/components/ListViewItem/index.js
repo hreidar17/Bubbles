@@ -6,8 +6,6 @@ const ListViewItem = props => {
   //eslint-disable-next-line
   const { id, name, description, image, price } = props;
 
-    console.log(props);
-
     return (
     <div className="card text-white bg-secondary mb-3">
       <div className="card-title"> <Link to={ "/products/" + id }>{ name }</Link></div>
@@ -18,7 +16,11 @@ const ListViewItem = props => {
           <div><strong>Price: </strong> <span> { price } ISK</span></div>
           <div>
             <form>
-              <input type="button" value="Add to cart" />
+              <input type="button" onClick = {
+                function goToCart() {
+                  toCart(id);
+                }
+              } value="Add to cart" />
             </form>
           </div>
         </div>
@@ -35,4 +37,18 @@ ListViewItem.propTypes = {
   price: PropTypes.number.isRequired
 };
 
+function toCart(id){
+  if(localStorage.getItem('cart') === null) {
+    var itemOne = [];
+    itemOne.push(id);
+    localStorage.setItem('cart', itemOne);
+  } else {
+    var itemTwo = [];
+    itemTwo.push(localStorage.getItem('cart'));
+    itemTwo.push(id);
+    localStorage.setItem('cart', itemTwo);
+  }
+}
+
 export default ListViewItem;
+

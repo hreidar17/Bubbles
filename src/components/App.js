@@ -9,14 +9,13 @@ import About from './About';
 import Cart from './Cart';
 import Footer from './Footer';
 import NoMatch from './NoMatch';
-//import { BubbleProductProvider } from '../context/BubbleContext';
-//import { ThemeProvider } from '../context/ThemeContext';
+
 
 
 class App extends React.Component {
 
   render() {
-    //console.log(this.state.bubbleProducts);
+
     return (
       <>
         <NavigationBar />
