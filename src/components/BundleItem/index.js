@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const BundleItem = props => {
-    const { id, name} = props;
+    const { id, name, items} = props;
     return (
         <div className="card text-white bg-secondary mb-3">
             <div className="card-header">{ name } <i className="fa fa-2x fa-times" style={{ float: 'right' }}></i></div>
             <div className="card-body">
                 <div className="card-text">
+                {console.log(items)}
                     <div style={{float: 'left', padding: '0px 20px 0px 5px'}}></div>
                     <div>Hello world!!!</div>
                 </div>

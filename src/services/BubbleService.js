@@ -18,10 +18,18 @@ const findBubbleProduct = (id) => {
   });
 }
 
-export default {
-  getAllBubbleProducts
+const getAllBundles = () => {
+    return fetch('http://localhost:3500/api/bundles').then(resp => {
+        if (resp.ok) {return resp.json(); }
+    }).then(data => {
+
+        if(!data) {return []; }
+        console.log("bundle-item: " + data)
+        const bundles = data;
+        return bundles;
+    });
 };
 
-export {
-  findBubbleProduct
-};
+export default { getAllBubbleProducts };
+export { findBubbleProduct };
+export { getAllBundles };

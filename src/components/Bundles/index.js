@@ -9,9 +9,8 @@ const Bundles = props => {
 
 };
 
-Bundles.PropTypes = {
+Bundles.propTypes = {
   list: PropTypes.array.isRequired
 };
-
 
 export default Bundles

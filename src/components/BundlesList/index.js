@@ -1,11 +1,10 @@
 import React from 'react';
 import Bundles from '../Bundles';
-import BundleService from '../../services/BundleService';
+import { getAllBundles } from '../../services/BubbleService'
 
 class BundleList extends React.Component {
     componentDidMount() {
-        BundleService.getAllBundles().then(data => this.setState({bundlesList: data}));
-        
+        getAllBundles().then(data => this.setState({bundlesList: data}));
     }
 
     constructor(props) {
