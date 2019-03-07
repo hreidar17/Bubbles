@@ -22,7 +22,7 @@ class BundleList extends React.Component {
                 <br />
                     <h2>Bundle products</h2>
                 <br />
-                <Bundles list={ this.state.bundlesList } />
+                    <Bundles list={ this.state.bundlesList } />
               </div>
             </div>
         )
