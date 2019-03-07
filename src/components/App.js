@@ -4,12 +4,13 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import NavigationBar from './NavigationBar';
 import Products from './Products';
 import BubbleDetail from './BubbleDetail';
-import Bundles from './Bundles';
+import BundleList from './BundlesList';
 import About from './About';
 import Cart from './Cart';
 import Footer from './Footer';
-import { BubbleProductProvider } from '../context/BubbleContext';
-import { ThemeProvider } from '../context/ThemeContext';
+import NoMatch from './NoMatch';
+//import { BubbleProductProvider } from '../context/BubbleContext';
+//import { ThemeProvider } from '../context/ThemeContext';
 
 
 class App extends React.Component {
@@ -23,10 +24,11 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={ Products } />
             <Route exact path="/products" render={ () => <Redirect to="/" /> } />
-            <Route exact path="/bundles" component={ Bundles } />
+            <Route exact path="/bundles" component={ BundleList } />
             <Route exact path="/about" component={ About } />
             <Route exact path="/cart" component={ Cart } />
             <Route exact path="/products/:bubbleId" component={ BubbleDetail } />
+            <Route component={NoMatch} />
           </Switch>
         </div>
         <Footer />

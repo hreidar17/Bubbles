@@ -6,7 +6,10 @@ import { findBubbleProduct } from '../../services/BubbleService';
 const ListViewItem = props => {
   //eslint-disable-next-line
   const { id, name, description, image, price } = props;
-  return (
+
+    console.log(props);
+
+    return (
     <div className="card text-white bg-secondary mb-3">
       <div className="card-title"> <Link to={ "/products/" + id }>{ name }</Link></div>
       <div className="card-body">

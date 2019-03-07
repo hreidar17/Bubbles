@@ -13,15 +13,22 @@ const findBubbleProduct = (id) => {
     if (resp.ok) { return resp.json(); }
   }).then(data => {
     if(!data) { return null; } //Ef ekkert finnst
-    console.log(data);
+    //console.log(data);
     return data;
   });
 }
 
-export default {
-  getAllBubbleProducts
+const getAllBundles = () => {
+    return fetch('http://localhost:3500/api/bundles').then(resp => {
+        if (resp.ok) {return resp.json(); }
+    }).then(data => {
+
+        if(!data) {return []; }
+        //console.log("bundle-item: " + data)
+        return data;
+    });
 };
 
-export {
-  findBubbleProduct
-};
+export default { getAllBubbleProducts };
+export { findBubbleProduct };
+export { getAllBundles };
