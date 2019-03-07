@@ -5,7 +5,6 @@ import BundleItem from '../BundleItem';
 const Bundles = props => {
   const {list} = props;
   return list.map(item => <BundleItem key={ item.id } { ...item }/>);
-
 };
 
 Bundles.propTypes = {

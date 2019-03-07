@@ -1,13 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { findBubbleProduct } from '../../services/BubbleService';
 
 const ListViewItem = props => {
   //eslint-disable-next-line
   const { id, name, description, image, price } = props;
-
-    console.log(props);
 
     return (
     <div className="card text-white bg-secondary mb-3">
@@ -42,14 +39,14 @@ ListViewItem.propTypes = {
 
 function toCart(id){
   if(localStorage.getItem('cart') === null) {
-    var item = [];
-    item.push(id);
-    localStorage.setItem('cart', item);
+    var itemOne = [];
+    itemOne.push(id);
+    localStorage.setItem('cart', itemOne);
   } else {
-    var item = [];
-    item.push(localStorage.getItem('cart'));
-    item.push(id);
-    localStorage.setItem('cart', item);
+    var itemTwo = [];
+    itemTwo.push(localStorage.getItem('cart'));
+    itemTwo.push(id);
+    localStorage.setItem('cart', itemTwo);
   }
 }
 

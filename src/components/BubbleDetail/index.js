@@ -23,7 +23,6 @@ class BubbleDetail extends React.Component {
           </div>
         );
       }
-      //console.log("bubbles: "+this.state.bubbleItem);
         return (
             <div className="card border-dark mb-3">
         		<div className="card-body">
